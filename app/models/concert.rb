@@ -1,2 +1,2 @@
-class Concert < ApplicationRecord
+class Concert < ActiveRecord::Base
 end
