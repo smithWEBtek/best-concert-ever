@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.1]
       t.integer :user_id
       t.integer :concert_id
       t.text    :comment 
-      t.integer :score
+      t.text    :rank
     end
   end
 end
