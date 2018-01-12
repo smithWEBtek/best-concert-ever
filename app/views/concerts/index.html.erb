@@ -1,2 +1,5 @@
-<h1>New Concert:</h1>
-<%= render 'form', concert: @concert %>
+ <h2>List of All Concert Tours</h2>
+ 
+ <% @concerts.each do |concert| %>
+    <%= concert.name %> -  <%= concert.artist %> - <%= concert.venue %> <br>
+  <% end %>
