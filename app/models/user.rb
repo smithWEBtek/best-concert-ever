@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :concerts, through: :reviews
   has_many :reviews
   
+  validates :email, presence: true, uniqueness: true
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -13,6 +15,11 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
     end      
+  end
+  
+  #scope method (return the users best concert ever)
+  def best_concert
+    reviews.order(rating: :desc).limit(1).first
   end
   
 end
