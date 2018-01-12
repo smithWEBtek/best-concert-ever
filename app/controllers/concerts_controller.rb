@@ -12,7 +12,7 @@ class ConcertsController < ApplicationController
      @concert = Concert.new(concert_params)
 
      if @concert.save
-       redirect_to concert_path(@conert)
+       redirect_to concert_path(@concert)
      else
        render :new
      end
