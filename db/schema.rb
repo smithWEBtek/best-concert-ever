@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20180111234129) do
     t.integer "user_id"
     t.integer "concert_id"
     t.text "comment"
-    t.text "rank"
+    t.integer "rating"
   end
 
   create_table "users", force: :cascade do |t|

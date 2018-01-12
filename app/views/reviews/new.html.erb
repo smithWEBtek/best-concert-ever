@@ -10,9 +10,9 @@
     <%= f.text_area :comment %>
     <br><br>
     
-    <%= f.label :rank %>
-    <%= f.select :rank, options_for_select(['good','better','best','best ever']),
-       {:prompt => 'Was this the best concert ever?'} %>
+    <%= f.label :rating %>
+    <%= f.select :rating, options_for_select(1..5),
+       {:prompt => 'Was this a 5 star concert?'} %>
    <br><br>
        
     <%= f.submit %>
