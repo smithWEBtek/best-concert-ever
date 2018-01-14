@@ -3,7 +3,7 @@
   <%= form_for @review, url: user_reviews_path(current_user)do |f| %>
  
     <%= f.label :concert_id %>
-    <%= f.collection_select :concert_id, Concert.all, :id, :name %>
+    <%= f.collection_select :concert_id, Concert.all, :id, :name, {:prompt => 'Select or Add a New Concert'} %>
     <br><br>
 
     <%= f.label :comment %>
@@ -16,5 +16,19 @@
    <br><br>
        
     <%= f.submit %>
-
-   <% end %>
+   
+   
+  <h3>Add a Concert to Review:</h3>
+     <%#= binding.pry %>
+      <%= f.fields_for :concert_attributes do |add_concert| %>
+      <%= add_concert.label :name %>
+      <%= add_concert.text_field :name %>
+      
+      <%= add_concert.label :artist %>
+      <%= add_concert.text_field :artist %>
+      
+      <%= add_concert.label :venue%>
+      <%= add_concert.text_field :venue%>
+  <%end %>
+  
+  <%end %>
