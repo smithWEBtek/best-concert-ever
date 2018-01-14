@@ -1,1 +1,6 @@
 <h1> Welcome <%= @user.email %></h1>
+
+<h3>Your Concert Reviews</h3>
+<% @user.reviews.each do |review| %>
+  <%=review.concert.name %> - <%=review.comment %><br><br>
+<% end %>
