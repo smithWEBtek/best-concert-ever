@@ -4,5 +4,5 @@
     <%= link_to concert.name, concert_path(concert) %> -  <%= concert.artist %> - <%= concert.venue %> <br>
   <% end %>
   <br><br>
-  <%= link_to "Add a Concert", new_concert_path %>
-  <%= link_to "Add a Review", new_user_review_path(current_user) %>
+  
+  <li><%= link_to "Add a Review", new_user_review_path(current_user) %></li>
