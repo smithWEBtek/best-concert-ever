@@ -2,5 +2,8 @@
 
 <h3>Your Concert Reviews</h3>
 <% @user.reviews.each do |review| %>
-  <%=review.concert.name %> - <%=review.comment %><br><br>
+  <%=review.concert.name %> - <%=review.comment %> - <%=review.rating%> <br><br>
 <% end %>
+
+<h2>Best Concert Ever!</h2>
+<%= top_rated(@user) %>

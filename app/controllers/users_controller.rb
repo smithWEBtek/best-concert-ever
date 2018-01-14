@@ -5,5 +5,6 @@ class UsersController < ApplicationController
     
     def index
       @users = User.all 
+      @reviews = Review.all
     end 
 end
