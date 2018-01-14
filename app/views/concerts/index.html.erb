@@ -1,5 +1,7 @@
  <h2>List of All Concert Tours</h2>
  
  <% @concerts.each do |concert| %>
-    <%= concert.name %> -  <%= concert.artist %> - <%= concert.venue %> <br>
+    <%= link_to concert.name, concert_path(concert) %> -  <%= concert.artist %> - <%= concert.venue %> <br>
   <% end %>
+  <br><br>
+  <%= link_to "Add a Concert", new_concert_path %>
