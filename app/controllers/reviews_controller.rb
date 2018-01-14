@@ -3,11 +3,11 @@ class ReviewsController < ApplicationController
      @review = Review.new
    end
    
-   def create 
+   def create
        @review = current_user.reviews.build(review_params)
        
      if @review.save
-       redirect_to review_path(@review)
+       redirect_to user_review_path(current_user, @review)
      else
        render :new
      end
@@ -17,6 +17,13 @@ class ReviewsController < ApplicationController
      @review = Review.find(params[:id])
    end
    
+   def index
+    if params[:concert_id]
+      @reviews = Concert.find(params[:concert_id]).reviews
+    else
+      @reviews = Review.all
+    end
+   end
    
    
   private

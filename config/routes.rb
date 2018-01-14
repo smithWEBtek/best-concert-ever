@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   get '/about', to: 'welcome#about'
   
   resources :concerts
-  resources :reviews 
+  
+  resources :reviews, only: [:index]
+  
+  resources :users do
+    resources :reviews
+  end
   
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

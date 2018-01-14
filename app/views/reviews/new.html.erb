@@ -1,6 +1,6 @@
 <h2> Review the Concert </h2>
 
-  <%= form_for @review do |f| %>
+  <%= form_for @review, url: user_reviews_path(current_user)do |f| %>
  
     <%= f.label :concert_id %>
     <%= f.collection_select :concert_id, Concert.all, :id, :name %>

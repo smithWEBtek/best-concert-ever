@@ -5,5 +5,10 @@
 
 <h2>Ratings</h2>
 
+<% @concert.reviews.last(5).each do |review| %>
+  <%=review.concert.rating %><br><br>
+<% end %>
+
 <%= link_to "List of All Concert Tours", concerts_path %>
 
+<%= link_to "Add a Concert Reviews", new_user_review_path(current_user) %>
