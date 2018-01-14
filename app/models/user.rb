@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   
   #scope method (return the users best concert ever)
   def best_concert
-    reviews.order(rating: :desc).limit(1).first
+    reviews.order(rating: :desc).limit(1).first && reviews.order(created_at: :asc).last 
   end
   
 end
