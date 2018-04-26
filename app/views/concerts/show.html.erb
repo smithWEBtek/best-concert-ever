@@ -3,5 +3,12 @@
 <h2>Venue: <%= @concert.venue %></h2>
 <br><br>
 
+<h2>This Concert's Reviews:</h2>
+  <% @concert.reviews.each do |cr| %>
+    <li><%= cr.comment %></li>
+  <% end %>
+</ul>
+<br><br>
+
 <li><%= link_to "List of All Concert Tours", concerts_path %></li>
 <li><%= link_to "Add a Concert Review", new_user_review_path(current_user) %></li>
