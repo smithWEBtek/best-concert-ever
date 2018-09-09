@@ -62,3 +62,7 @@ gem 'omniauth-facebook'
 gem 'dotenv-rails'
 
 gem 'pry-rails'
+
+gem 'bootstrap'
+
+gem 'autoprefixer-rails'
