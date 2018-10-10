@@ -6,4 +6,8 @@ class Concert < ActiveRecord::Base
     validates :name, presence: true
     validates :artist, presence: true
     validates :venue, presence: true
+
+    def order_venue
+      venue.order(venue: :desc)
+    end
 end
