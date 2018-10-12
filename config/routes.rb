@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
   get '/about', to: 'welcome#about'
 
-  get 'users/venue', to:'concert#venue'
+  get '/concerts/venue', to:'concerts#venue'
 
   resources :concerts
 
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
+# working on getting venues to display in the venues view
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

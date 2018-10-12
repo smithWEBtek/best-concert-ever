@@ -32,9 +32,9 @@ class ConcertsController < ApplicationController
      @concert = Concert.find(params[:id])
     end
 
-    def venue 
-      @concert = Concert.order_venue
-    end 
+    def venue
+      @concert = Concert.order('venue ASC')
+    end
 
   private
     def concert_params

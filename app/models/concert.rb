@@ -8,6 +8,5 @@ class Concert < ActiveRecord::Base
     validates :venue, presence: true
 
     def order_venue
-      venue.order(venue: :desc)
     end
 end
