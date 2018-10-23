@@ -33,7 +33,7 @@ class ConcertsController < ApplicationController
     end
 
     def venue
-      @concert = Concert.order('venue ASC')
+      @concert = Concert.venue_order
     end
 
   private

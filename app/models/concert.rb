@@ -7,6 +7,8 @@ class Concert < ActiveRecord::Base
     validates :artist, presence: true
     validates :venue, presence: true
 
-    def order_venue
+  # binding.pry
+    def self.venue_order
+      @concert = Concert.order('venue ASC')
     end
 end
