@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   
-  has_many :concerts, through: :reviews
   has_many :reviews
+  has_many :concerts, through: :reviews
   
   validates :email, presence: true, uniqueness: true
   

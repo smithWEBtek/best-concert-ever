@@ -1,7 +1,11 @@
 class ConcertsController < ApplicationController
 
    def index
-     @concerts = Concert.all
+		 @concerts = Concert.all
+		 respond_to do |format|
+			format.html {render :index}
+			format.json {render json: @concerts}
+		end
    end
 
    def new
