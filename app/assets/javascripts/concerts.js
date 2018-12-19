@@ -35,7 +35,6 @@ function getConcerts() {
 			// put data onto the DOM
 			// JSON cannot go directly onto the DOM, have turn into strings
 			let display = document.getElementById('concert-data')
-
 			display.innerHTML = `<h1>${response[0].artist}</h1>`
 
 		})
@@ -47,9 +46,9 @@ function getConcerts() {
 
 class Concert {
 	constructor(obj) {
-		this.artist = obj.artist,
-			this.artist = obj.venue,
-			this.artist = obj.name
+		this.artist = obj.artist
+		this.venue = obj.venue
+		this.name = obj.name
 	}
 }
 
